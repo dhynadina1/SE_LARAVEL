@@ -66,7 +66,7 @@ class AnimalController extends Controller
      */
     public function show(Animal $animal)
     {
-        $animal = Animal::with("cage")->find($animal->id);
+        $animal = Animal::with('cage')->find($animal->id);
 
         return response()->json([
             'code' => 200,
