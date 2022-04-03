@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+Route::middleware('gempa')->group(function () {
 Route::get("/data", [\App\Http\Controllers\Api\CekGempaController::class, "getData"]);
 Route::get("/quake", [\App\Http\Controllers\Api\CekGempaController::class, "getQuake"]);
 Route::get("/weather/{province}", [\App\Http\Controllers\Api\CekGempaController::class, "getProvince"]);
 Route::get("/weather/{province}/{city}", [\App\Http\Controllers\Api\CekGempaController::class, "getCity"]);
+});
